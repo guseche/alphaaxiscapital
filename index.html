@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaAxis Capital | Elevating Growth</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="AlphaAxis Capital: Firma de inversión corporativa y alternativa.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="AlphaAxis Logo" class="logo-image">
+                <span class="logo-text">AlphaAxis <span>Capital</span></span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#servicios" class="nav-link" data-i18n="nav_services">Servicios</a>
+                <a href="#confianza" class="nav-link" data-i18n="nav_trust">Confianza</a>
+                <a href="#nosotros" class="nav-link" data-i18n="nav_firm">La Firma</a>
+                <div class="lang-switch">
+                    <button id="lang-es" class="lang-btn active">ES</button>
+                    <span class="lang-sep">|</span>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Abrir Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <h1 class="hero-title" data-i18n="hero_title">Innovación.<br>Liderazgo.<br>Confianza.</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Modern alternative investment for forward-thinking professionals. Descubra soluciones estratégicas y potencie su crecimiento con la firma referente del mercado.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn btn-primary btn-large" data-i18n="hero_btn_solutions">Nuestras Soluciones</a>
+                    <a href="#nosotros" class="btn btn-secondary btn-large" data-i18n="hero_btn_philosophy">Filosofía AlphaAxis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Value Proposition -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="services_header">Elevating Growth</h2>
+                <p data-i18n="services_p">Nuestras soluciones financieras están diseñadas arquitectónicamente para maximizar el rendimiento manteniendo el control y la seguridad.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card reveal">
+                    <div class="icon-wrapper">
+                        <!-- Chart Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/><path d="m17 8-5-3-5 3"/></svg>
+                    </div>
+                    <h3 data-i18n="srv_1_title">Inversión Alternativa</h3>
+                    <p data-i18n="srv_1_desc">Acceda a oportunidades exclusivas con modelos de análisis predictivo, diversificación avanzada y gestión dinámica de carteras.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="icon-wrapper">
+                        <!-- Briefcase Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3 data-i18n="srv_2_title">Gestión Corporativa</h3>
+                    <p data-i18n="srv_2_desc">Asesoramiento integral, banca de inversión y estructuración de capital orientados a instituciones y empresas de alto nivel.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="icon-wrapper">
+                        <!-- Shield Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    </div>
+                    <h3 data-i18n="srv_3_title">Seguridad y Confianza</h3>
+                    <p data-i18n="srv_3_desc">Protección patrimonial superior bajo los más estrictos estándares regulatorios y tecnología criptográfica de vanguardia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Statistics Section -->
+    <section class="trust" id="confianza">
+        <div class="trust-wrapper reveal">
+            <div class="trust-image-box">
+                <img src="img/corporate_trust.png" alt="Gráficas de crecimiento financiero reales" class="trust-corporate-img">
+            </div>
+            <div class="trust-content-box">
+                <h2 data-i18n="trust_title">Solidez que Respalda su Futuro</h2>
+                <p data-i18n="trust_p">En <strong>AlphaAxis Capital</strong> construimos relaciones a largo plazo. Nos basamos en resultados consistentes, transparencia absoluta y una gestión rigurosamente disciplinada del riesgo financiero.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">+$1B</span>
+                        <span class="stat-label" data-i18n="stat_1">Activos Gestionados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label" data-i18n="stat_2">Precisión Transaccional</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-i18n="stat_3">Monitoreo Estratégico</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">#1</span>
+                        <span class="stat-label" data-i18n="stat_4">Referente Regional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy / About Us CTA -->
+    <section class="cta" id="nosotros">
+        <div class="container cta-container reveal">
+            <h2 data-i18n="cta_title">Transforme su Visión Financiera</h2>
+            <p data-i18n="cta_p">Únase a los líderes de la industria. Adopte una perspectiva profesional y experta para maximizar la expansión de su capital exponencialmente.</p>
+            <a href="#contacto" class="btn btn-primary btn-large" data-i18n="cta_btn">Agendar una Consulta Privada</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="img/logo.png" alt="AlphaAxis Logo" class="logo-image">
+                    <span class="logo-text">AlphaAxis <span>Capital</span></span>
+                </a>
+                <p data-i18n="footer_slogan">Elevating Growth. Modern alternative investment for forward-thinking professionals.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 data-i18n="ft_col_1">Compañía</h4>
+                    <a href="#" data-i18n="ft_link_1_1">La Firma</a>
+                    <a href="#" data-i18n="ft_link_1_2">Liderazgo y Directorio</a>
+                    <a href="#" data-i18n="ft_link_1_3">Carreras</a>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="ft_col_2">Soluciones</h4>
+                    <a href="#" data-i18n="ft_link_2_1">Inversión Alternativa</a>
+                    <a href="#" data-i18n="ft_link_2_2">Fondos Estructurados</a>
+                    <a href="#" data-i18n="ft_link_2_3">Finanzas Corporativas</a>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="ft_col_3">Legal & Soporte</h4>
+                    <a href="#" data-i18n="ft_link_3_1">Términos Contractuales</a>
+                    <a href="#" data-i18n="ft_link_3_2">Políticas de Privacidad</a>
+                    <a href="#" data-i18n="ft_link_3_3">Portal de Cliente</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p data-i18n="footer_rights">&copy; 2026 AlphaAxis Capital. Marca registrada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
