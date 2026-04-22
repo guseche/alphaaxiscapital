@@ -251,7 +251,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/stock_market_hero.png');
+    background-image: url('../img/stock_market_hero.png');
     background-size: cover;
     background-position: center;
     z-index: 1;
