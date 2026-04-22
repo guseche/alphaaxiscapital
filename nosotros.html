@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros | AlphaAxis Capital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="AlphaAxis Logo" class="logo-image">
+                <span class="logo-text">AlphaAxis <span>Capital</span></span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#servicios" class="nav-link" data-i18n="nav_services">Servicios</a>
+                <a href="index.html#confianza" class="nav-link" data-i18n="nav_firm">Nosotros</a>
+                <a href="https://wa.me/573045401512" target="_blank" class="nav-link" data-i18n="nav_contact">Contacto</a>
+                <div class="lang-switch">
+                    <button id="lang-es" class="lang-btn active">ES</button>
+                    <span class="lang-sep">|</span>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="hero-background"></div>
+            <div class="container reveal" style="position: relative; z-index: 2;">
+                <h1 data-i18n="about_page_title">Acerca de Nosotros</h1>
+                <p data-i18n="about_page_subtitle">Trascendemos las barreras financieras para acompañarte en la expansión de tus operaciones globales.</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container reveal">
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <h2 data-i18n="about_mission_title">Misión</h2>
+                        <p data-i18n="about_mission_desc">Transformar la complejidad financiera en operaciones ágiles, rentables y extremadamente seguras. Nuestro objetivo es brindar a profesionales y empresas la liquidez y las vías corporativas necesarias para que escalen sus modelos de negocio en la economía internacional sin fricciones ni esperas.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h2 data-i18n="about_vision_title">Visión</h2>
+                        <p data-i18n="about_vision_desc">Convertirnos en el estándar de oro en estructuración, dispersión y consultoría financiera dentro de América Latina. Visualizamos un entorno empresarial donde los modelos innovadores cuenten permanentemente con el respaldo estratégico y el flujo de caja instantáneo que requieren para dominar el mercado.</p>
+                    </div>
+                </div>
+
+                <div class="values-section">
+                    <div class="section-header">
+                        <h2 data-i18n="about_values_title">Pilares Estructurales</h2>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h3 data-i18n="about_val_1_title">Transparencia Radical</h3>
+                            <p data-i18n="about_val_1_desc">Aclaramos cada paso del flujo. Sin sobrecostos ocultos, para que sepas en todo momento en dónde y cómo rinde tu capital.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+                            </div>
+                            <h3 data-i18n="about_val_2_title">Innovación y Agilidad</h3>
+                            <p data-i18n="about_val_2_desc">Abandonamos los ciclos analógicos del ayer proporcionando arquitecturas financieras que se mueven en horas, no semanas.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </div>
+                            <h3 data-i18n="about_val_3_title">Acompañamiento Experto</h3>
+                            <p data-i18n="about_val_3_desc">Nuestra principal métrica es tu éxito, respaldándote integralmente como verdaderos guardianes de la operativa de tu negocio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="nosotros-cta">
+            <div class="container cta-container reveal">
+                <h2 data-i18n="about_cta_title">Únete a nosotros</h2>
+                <p data-i18n="about_cta_p">Lleva tu operación al siguiente nivel. Contamos con la experiencia y arquitectura financiera que tu empresa exige para crecer sin límites.</p>
+                <a href="https://wa.me/573045401512" target="_blank" class="btn btn-primary btn-large" data-i18n="about_cta_btn">Agendar una Consulta</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="img/logo.png" alt="AlphaAxis Logo" class="logo-image">
+                    <span class="logo-text">AlphaAxis <span>Capital</span></span>
+                </a>
+                <p data-i18n="footer_slogan">Elevating Growth. Alternativa de inversión moderna para profesionales e instituciones.</p>
+            </div>
+            <nav class="footer-links-simple">
+                <a href="index.html#servicios" data-i18n="nav_services">Servicios</a>
+                <a href="index.html#confianza" data-i18n="nav_firm">Nosotros</a>
+                <a href="https://wa.me/573045401512" target="_blank" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+        <div class="container footer-bottom">
+            <p data-i18n="footer_rights">&copy; 2026 AlphaAxis Capital. Marca registrada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

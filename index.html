@@ -22,10 +22,15 @@
                 <img src="img/logo.png" alt="AlphaAxis Logo" class="logo-image">
                 <span class="logo-text">AlphaAxis <span>Capital</span></span>
             </a>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="nav-menu" id="nav-menu">
                 <a href="#servicios" class="nav-link" data-i18n="nav_services">Servicios</a>
-                <a href="#confianza" class="nav-link" data-i18n="nav_trust">Confianza</a>
-                <a href="#nosotros" class="nav-link" data-i18n="nav_firm">La Firma</a>
+                <a href="#confianza" class="nav-link" data-i18n="nav_firm">Nosotros</a>
+                <a href="https://wa.me/573045401512" target="_blank" class="nav-link" data-i18n="nav_contact">Contacto</a>
                 <div class="lang-switch">
                     <button id="lang-es" class="lang-btn active">ES</button>
                     <span class="lang-sep">|</span>
@@ -45,11 +50,15 @@
         <div class="hero-background"></div>
         <div class="container hero-container">
             <div class="hero-content reveal">
-                <h1 class="hero-title" data-i18n="hero_title">Innovación.<br>Liderazgo.<br>Confianza.</h1>
-                <p class="hero-subtitle" data-i18n="hero_subtitle">Modern alternative investment for forward-thinking professionals. Descubra soluciones estratégicas y potencie su crecimiento con la firma referente del mercado.</p>
+                <h1 class="hero-title formula-title" data-i18n="hero_title">
+                    <div class="formula-line plus"><span class="op">+</span> <span class="text">Eficiencia en cada transacción.</span></div>
+                    <div class="formula-line minus"><span class="op">–</span> <span class="text">Fricciones bancarias innecesarias.</span></div>
+                    <div class="formula-line equals"><span class="op">=</span> <span class="text">Crecimiento sostenible.</span></div>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle"><strong>Potenciamos tu visión, aseguramos tus resultados.</strong> Somos el aliado financiero y empresarial que evoluciona al ritmo de tu negocio, transformando cada operación en una oportunidad de expansión.</p>
                 <div class="hero-buttons">
                     <a href="#servicios" class="btn btn-primary btn-large" data-i18n="hero_btn_solutions">Nuestras Soluciones</a>
-                    <a href="#nosotros" class="btn btn-secondary btn-large" data-i18n="hero_btn_philosophy">Filosofía AlphaAxis</a>
+                    <a href="#por-que-nosotros" class="btn btn-secondary btn-large" data-i18n="hero_btn_philosophy">Por qué escogernos</a>
                 </div>
             </div>
         </div>
@@ -60,7 +69,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2 data-i18n="services_header">Elevating Growth</h2>
-                <p data-i18n="services_p">Nuestras soluciones financieras están diseñadas arquitectónicamente para maximizar el rendimiento manteniendo el control y la seguridad.</p>
+                <p class="section-subtitle" data-i18n="services_p">Diseñamos la ruta de servicios para que tu dinero se mueva sin fricciones. Desde la recepción de tus pagos hasta la dispersión a tu equipo, nuestra empresa optimiza cada paso para que tu única preocupación sea seguir creciendo. Menos trámites, más rentabilidad.</p>
             </div>
             <div class="services-grid">
                 <!-- Service Card 1 -->
@@ -69,8 +78,8 @@
                         <!-- Chart Icon -->
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/><path d="m17 8-5-3-5 3"/></svg>
                     </div>
-                    <h3 data-i18n="srv_1_title">Inversión Alternativa</h3>
-                    <p data-i18n="srv_1_desc">Acceda a oportunidades exclusivas con modelos de análisis predictivo, diversificación avanzada y gestión dinámica de carteras.</p>
+                    <h3 data-i18n="srv_1_title">Pagos sin fronteras</h3>
+                    <p data-i18n="srv_1_desc">Eliminamos la fricción de operaciones complejas, para que tu motor financiero nunca se detenga. Tú lideras el equipo, nosotros aseguramos la liquidez de tu negocio en Colombia.</p>
                 </div>
                 <!-- Service Card 2 -->
                 <div class="service-card reveal" style="transition-delay: 0.1s;">
@@ -78,8 +87,8 @@
                         <!-- Briefcase Icon -->
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                     </div>
-                    <h3 data-i18n="srv_2_title">Gestión Corporativa</h3>
-                    <p data-i18n="srv_2_desc">Asesoramiento integral, banca de inversión y estructuración de capital orientados a instituciones y empresas de alto nivel.</p>
+                    <h3 data-i18n="srv_2_title">Dispersión de pagos</h3>
+                    <p data-i18n="srv_2_desc">Olvídate de las esperas de 24 horas. Te garantizamos que tus pagos a clientes, proveedores o aliados sean más eficientes, no sólo en tiempo, sino en costo financiero.</p>
                 </div>
                 <!-- Service Card 3 -->
                 <div class="service-card reveal" style="transition-delay: 0.2s;">
@@ -87,8 +96,8 @@
                         <!-- Shield Icon -->
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
                     </div>
-                    <h3 data-i18n="srv_3_title">Seguridad y Confianza</h3>
-                    <p data-i18n="srv_3_desc">Protección patrimonial superior bajo los más estrictos estándares regulatorios y tecnología criptográfica de vanguardia.</p>
+                    <h3 data-i18n="srv_3_title">Consultoría financiera</h3>
+                    <p data-i18n="srv_3_desc">Transformamos tu operación en rentabilidad. Realizamos un diagnóstico de tu flujo financiero para eliminar fricciones y optimizar tu facturación. En AlphaAxis, tu eficiencia es nuestra métrica de éxito.</p>
                 </div>
             </div>
         </div>
@@ -102,35 +111,96 @@
             </div>
             <div class="trust-content-box">
                 <h2 data-i18n="trust_title">Solidez que Respalda su Futuro</h2>
-                <p data-i18n="trust_p">En <strong>AlphaAxis Capital</strong> construimos relaciones a largo plazo. Nos basamos en resultados consistentes, transparencia absoluta y una gestión rigurosamente disciplinada del riesgo financiero.</p>
+                <p data-i18n="trust_p">En <strong>AlphaAxis Capital</strong> construimos relaciones a largo plazo. Nos basamos en resultados consistentes, transparencia absoluta y acompañamiento estratégico para que tu negocio esté a la altura de sus necesidades.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number">+$1B</span>
+                        <span class="stat-number">+1M USD</span>
                         <span class="stat-label" data-i18n="stat_1">Activos Gestionados</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">99.9%</span>
-                        <span class="stat-label" data-i18n="stat_2">Precisión Transaccional</span>
+                        <span class="stat-number">99,9%</span>
+                        <span class="stat-label" data-i18n="stat_2">Pagos en menos de 24 horas</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">24/7</span>
                         <span class="stat-label" data-i18n="stat_3">Monitoreo Estratégico</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">#1</span>
-                        <span class="stat-label" data-i18n="stat_4">Referente Regional</span>
-                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Philosophy / About Us CTA -->
-    <section class="cta" id="nosotros">
+    <!-- Horizontal Marquee Slider Section -->
+    <div class="fullwidth-marquee">
+        <div class="stat-marquee-track">
+            <span data-i18n="stat_feat_1" class="sm-text">Tú mismo decides en qué momento convertir tus recursos</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_2" class="sm-text">Sin costos ocultos</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_3" class="sm-text">Sin comisiones desmedidas</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_4" class="sm-text">100% a la medida de tus necesidades</span>
+            <span class="sm-dot">•</span>
+            <!-- Duplicated for infinite loop -->
+            <span data-i18n="stat_feat_1" class="sm-text">Tú mismo decides en qué momento convertir tus recursos</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_2" class="sm-text">Sin costos ocultos</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_3" class="sm-text">Sin comisiones desmedidas</span>
+            <span class="sm-dot">•</span>
+            <span data-i18n="stat_feat_4" class="sm-text">100% a la medida de tus necesidades</span>
+            <span class="sm-dot">•</span>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="por-que-nosotros">
+        <div class="container reveal">
+            <div class="section-header text-left">
+                <h2 data-i18n="why_title">¿Por qué escogernos?</h2>
+            </div>
+            <div class="why-grid">
+                <!-- Card 1 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feature-icon"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <div class="why-divider"></div>
+                    <h3 data-i18n="why_1_title">Eficiencia en costos</h3>
+                    <p data-i18n="why_1_desc">Eliminamos los sobrecostos ocultos y la burocracia que castiga tus ingresos. Con nuestra dinámica financiera, aseguramos que cada operación rinda al máximo. En AlphaAxis, la eficiencia no es una promesa, es la base de nuestra visión financiera.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feature-icon"><polygon points="3 2 21 2 15 11 15 13 21 22 3 22 9 13 9 11 3 2"></polygon><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
+                    <div class="why-divider"></div>
+                    <h3 data-i18n="why_2_title">Agilidad operativa</h3>
+                    <p data-i18n="why_2_desc">Libérate de los ciclos bancarios del siglo pasado. Mientras los aliados tradicionales te piden días, nosotros te damos soluciones en horas. Nuestra metodología de pagos está optimizada para que cotices, valides y recibas en una sola jornada. Es agilidad real para quienes operan en la economía digital.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feature-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
+                    <div class="why-divider"></div>
+                    <h3 data-i18n="why_3_title">Atención al cliente real</h3>
+                    <p data-i18n="why_3_desc">No eres un ticket de soporte, eres un aliado. Sabemos que detrás de cada transacción hay un proyecto, un equipo o una meta. Por eso, te brindamos un acompañamiento humano y experto de principio a fin. Resolvemos dudas, agilizamos procesos y aseguramos resultados. Tu tranquilidad no es opcional.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="https://wa.me/573045401512" target="_blank" class="btn btn-primary btn-large" data-i18n="why_btn" style="border-radius: 100px;">Contáctanos y llevemos tus resultados al siguiente nivel.</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Intro -->
+    <section class="cta" id="nosotros-intro">
         <div class="container cta-container reveal">
-            <h2 data-i18n="cta_title">Transforme su Visión Financiera</h2>
-            <p data-i18n="cta_p">Únase a los líderes de la industria. Adopte una perspectiva profesional y experta para maximizar la expansión de su capital exponencialmente.</p>
-            <a href="#contacto" class="btn btn-primary btn-large" data-i18n="cta_btn">Agendar una Consulta Privada</a>
+            <h2 data-i18n="about_intro_title">Nuestra Filosofía Corporativa</h2>
+            <p data-i18n="about_intro_p">No somos un proveedor, somos tu aliado estratégico. Descubre el talento, la visión y el rigor estructural que nos permite impulsar líderes y trascender en la economía digital.</p>
+            <a href="nosotros.html" class="btn btn-primary btn-large" data-i18n="about_intro_btn">Conoce más sobre AlphaAxis</a>
         </div>
     </section>
 
@@ -144,26 +214,11 @@
                 </a>
                 <p data-i18n="footer_slogan">Elevating Growth. Modern alternative investment for forward-thinking professionals.</p>
             </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4 data-i18n="ft_col_1">Compañía</h4>
-                    <a href="#" data-i18n="ft_link_1_1">La Firma</a>
-                    <a href="#" data-i18n="ft_link_1_2">Liderazgo y Directorio</a>
-                    <a href="#" data-i18n="ft_link_1_3">Carreras</a>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="ft_col_2">Soluciones</h4>
-                    <a href="#" data-i18n="ft_link_2_1">Inversión Alternativa</a>
-                    <a href="#" data-i18n="ft_link_2_2">Fondos Estructurados</a>
-                    <a href="#" data-i18n="ft_link_2_3">Finanzas Corporativas</a>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="ft_col_3">Legal & Soporte</h4>
-                    <a href="#" data-i18n="ft_link_3_1">Términos Contractuales</a>
-                    <a href="#" data-i18n="ft_link_3_2">Políticas de Privacidad</a>
-                    <a href="#" data-i18n="ft_link_3_3">Portal de Cliente</a>
-                </div>
-            </div>
+            <nav class="footer-links-simple">
+                <a href="#servicios" data-i18n="nav_services">Servicios</a>
+                <a href="#confianza" data-i18n="nav_firm">Nosotros</a>
+                <a href="https://wa.me/573045401512" target="_blank" data-i18n="nav_contact">Contacto</a>
+            </nav>
         </div>
         <div class="container footer-bottom">
             <p data-i18n="footer_rights">&copy; 2026 AlphaAxis Capital. Marca registrada. Todos los derechos reservados.</p>
