@@ -203,4 +203,66 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         setLanguage('en');
     });
+
+    // Fetch Market Data
+    async function fetchMarketData() {
+        const tickerEl = document.getElementById('market-ticker');
+        if (!tickerEl) return;
+
+        try {
+            const [cryptoRes, usdRes, eurRes] = await Promise.all([
+                fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd,cop&include_24hr_change=true').catch(() => null),
+                fetch('https://api.exchangerate-api.com/v4/latest/USD').catch(() => null),
+                fetch('https://api.exchangerate-api.com/v4/latest/EUR').catch(() => null)
+            ]);
+
+            let cryptoData = {}, usdData = {}, eurData = {};
+            if (cryptoRes && cryptoRes.ok) cryptoData = await cryptoRes.json();
+            if (usdRes && usdRes.ok) usdData = await usdRes.json();
+            if (eurRes && eurRes.ok) eurData = await eurRes.json();
+
+            const items = [];
+
+            const formatCurrency = (val, currency = 'USD') => {
+                return new Intl.NumberFormat('es-CO', { style: 'currency', currency: currency, maximumFractionDigits: currency === 'COP' ? 0 : 2 }).format(val);
+            };
+
+            const getChangeSpan = (change) => {
+                if (change === undefined || change === null) return '';
+                const isPositive = change >= 0;
+                const colorClass = isPositive ? 'ticker-up' : 'ticker-down';
+                const arrow = isPositive ? '▲' : '▼';
+                return `<span class="${colorClass}">${arrow} ${Math.abs(change).toFixed(2)}%</span>`;
+            };
+
+            if (usdData.rates && usdData.rates.COP) {
+                items.push(`<span class="ticker-label">USD/COP</span> <span class="ticker-value">${formatCurrency(usdData.rates.COP, 'COP')}</span>`);
+            }
+            if (eurData.rates && eurData.rates.COP) {
+                items.push(`<span class="ticker-label">EUR/COP</span> <span class="ticker-value">${formatCurrency(eurData.rates.COP, 'COP')}</span>`);
+            }
+            if (cryptoData.bitcoin) {
+                items.push(`<span class="ticker-label">BTC/USD</span> <span class="ticker-value">${formatCurrency(cryptoData.bitcoin.usd, 'USD')}</span> ${getChangeSpan(cryptoData.bitcoin.usd_24h_change)}`);
+                items.push(`<span class="ticker-label">BTC/COP</span> <span class="ticker-value">${formatCurrency(cryptoData.bitcoin.cop, 'COP')}</span>`);
+            }
+            if (cryptoData.ethereum) {
+                items.push(`<span class="ticker-label">ETH/USD</span> <span class="ticker-value">${formatCurrency(cryptoData.ethereum.usd, 'USD')}</span> ${getChangeSpan(cryptoData.ethereum.usd_24h_change)}`);
+                items.push(`<span class="ticker-label">ETH/COP</span> <span class="ticker-value">${formatCurrency(cryptoData.ethereum.cop, 'COP')}</span>`);
+            }
+
+            if (items.length > 0) {
+                const tickerHTML = [...items, ...items, ...items, ...items].map(item => `<span class="ticker-item">${item}</span>`).join('');
+                tickerEl.innerHTML = tickerHTML;
+            } else {
+                tickerEl.innerHTML = '<span class="ticker-item">Información de mercado no disponible en este momento</span>';
+            }
+
+        } catch (error) {
+            console.error("Error fetching market data:", error);
+            tickerEl.innerHTML = '<span class="ticker-item">Error al cargar datos del mercado</span>';
+        }
+    }
+
+    fetchMarketData();
+    setInterval(fetchMarketData, 60000);
 });
