@@ -791,11 +791,25 @@ p {
 
 /* Responsive */
 @media (max-width: 992px) {
+    .hero {
+        padding-top: 100px;
+        justify-content: flex-end; /* Push text to lower half */
+        padding-bottom: 3rem;
+    }
+    
+    .hero-container {
+        margin-top: 50vh; /* Leave top space for the face */
+    }
+
     .hero-model {
         width: 100%;
-        opacity: 0.5;
-        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
-        mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+        height: 70vh; /* She takes the top 70% */
+        top: 0;
+        bottom: auto;
+        opacity: 0.9; /* Super visible */
+        background-position: top center;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
     
     .trust-wrapper {
