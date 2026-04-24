@@ -258,7 +258,7 @@ p {
 }
 
 /* Gradient overlay for better text readability */
-.hero-background::before {
+.hero-background::after {
     content: '';
     position: absolute;
     top: 0;
@@ -267,6 +267,22 @@ p {
     height: 100%;
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.85) 0%, rgba(10, 20, 35, 0.95) 100%);
     z-index: 2;
+    pointer-events: none;
+}
+
+.hero-model {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    height: 100%;
+    background-image: url('../img/modelo.jpeg');
+    background-size: cover;
+    background-position: center top;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    z-index: 3;
+    opacity: 1;
 }
 
 .hero-container {
@@ -275,14 +291,14 @@ p {
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 650px;
     position: relative;
-    z-index: 2;
-    margin: 0 auto;
+    z-index: 4;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    text-align: justify;
+    text-align: left;
 }
 
 .hero-title {
@@ -329,32 +345,42 @@ p {
     margin-top: 0.8rem;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 90%;
 }
 
 .formula-line span.op {
-    color: var(--aspen-green);
-    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 1.5rem;
-    font-size: 4rem;
+    width: 3.5rem;
+    flex-shrink: 0;
+}
+
+.formula-line span.op svg {
+    width: 100%;
+    height: auto;
+    max-width: 42px;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.25)); /* Subtle depth */
 }
 
 .formula-line span.text {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 @media (max-width: 1400px) {
-    .formula-line span.op { font-size: 3.2rem; margin-right: 1rem; }
-    .formula-line span.text { font-size: 2.8rem; }
+    .formula-line span.op { font-size: 2.5rem; margin-right: 1rem; }
+    .formula-line span.text { font-size: 2.2rem; }
 }
 
 @media (max-height: 800px) {
-    .formula-line span.op { font-size: 2.5rem; margin-right: 1rem; }
-    .formula-line span.text { font-size: 2.2rem; }
+    .formula-line span.op { font-size: 2.2rem; margin-right: 1rem; }
+    .formula-line span.text { font-size: 1.8rem; }
     .hero-subtitle { font-size: 1.1rem; }
 }
 
 .formula-line .text {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-family: var(--font-serif);
     font-weight: 300;
     line-height: 1.2;
@@ -765,6 +791,13 @@ p {
 
 /* Responsive */
 @media (max-width: 992px) {
+    .hero-model {
+        width: 100%;
+        opacity: 0.5;
+        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+        mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+    }
+    
     .trust-wrapper {
         grid-template-columns: 1fr; /* Stack vertically */
     }
