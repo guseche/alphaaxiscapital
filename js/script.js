@@ -210,14 +210,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!tickerEl) return;
 
         try {
-            const [cryptoRes, usdRes, eurRes] = await Promise.all([
-                fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd,cop&include_24hr_change=true').catch(() => null),
-                fetch('https://api.exchangerate-api.com/v4/latest/USD').catch(() => null),
-                fetch('https://api.exchangerate-api.com/v4/latest/EUR').catch(() => null)
+            // Using more CORS-friendly APIs for GitHub Pages
+            const [btcRes, ethRes, usdRes, eurRes] = await Promise.all([
+                fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT').catch(() => null),
+                fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT').catch(() => null),
+                fetch('https://open.er-api.com/v6/latest/USD').catch(() => null),
+                fetch('https://open.er-api.com/v6/latest/EUR').catch(() => null)
             ]);
 
-            let cryptoData = {}, usdData = {}, eurData = {};
-            if (cryptoRes && cryptoRes.ok) cryptoData = await cryptoRes.json();
+            let btcData = {}, ethData = {}, usdData = {}, eurData = {};
+            if (btcRes && btcRes.ok) btcData = await btcRes.json();
+            if (ethRes && ethRes.ok) ethData = await ethRes.json();
             if (usdRes && usdRes.ok) usdData = await usdRes.json();
             if (eurRes && eurRes.ok) eurData = await eurRes.json();
 
@@ -228,26 +231,36 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const getChangeSpan = (change) => {
-                if (change === undefined || change === null) return '';
-                const isPositive = change >= 0;
+                if (change === undefined || change === null || isNaN(change)) return '';
+                const numChange = parseFloat(change);
+                const isPositive = numChange >= 0;
                 const colorClass = isPositive ? 'ticker-up' : 'ticker-down';
                 const arrow = isPositive ? '▲' : '▼';
-                return `<span class="${colorClass}">${arrow} ${Math.abs(change).toFixed(2)}%</span>`;
+                return `<span class="${colorClass}">${arrow} ${Math.abs(numChange).toFixed(2)}%</span>`;
             };
 
+            let copRate = 0;
             if (usdData.rates && usdData.rates.COP) {
-                items.push(`<span class="ticker-label">USD/COP</span> <span class="ticker-value">${formatCurrency(usdData.rates.COP, 'COP')}</span>`);
+                copRate = usdData.rates.COP;
+                items.push(`<span class="ticker-label">USD/COP</span> <span class="ticker-value">${formatCurrency(copRate, 'COP')}</span>`);
             }
             if (eurData.rates && eurData.rates.COP) {
                 items.push(`<span class="ticker-label">EUR/COP</span> <span class="ticker-value">${formatCurrency(eurData.rates.COP, 'COP')}</span>`);
             }
-            if (cryptoData.bitcoin) {
-                items.push(`<span class="ticker-label">BTC/USD</span> <span class="ticker-value">${formatCurrency(cryptoData.bitcoin.usd, 'USD')}</span> ${getChangeSpan(cryptoData.bitcoin.usd_24h_change)}`);
-                items.push(`<span class="ticker-label">BTC/COP</span> <span class="ticker-value">${formatCurrency(cryptoData.bitcoin.cop, 'COP')}</span>`);
+            
+            if (btcData.lastPrice) {
+                const btcUsd = parseFloat(btcData.lastPrice);
+                items.push(`<span class="ticker-label">BTC/USD</span> <span class="ticker-value">${formatCurrency(btcUsd, 'USD')}</span> ${getChangeSpan(btcData.priceChangePercent)}`);
+                if (copRate > 0) {
+                    items.push(`<span class="ticker-label">BTC/COP</span> <span class="ticker-value">${formatCurrency(btcUsd * copRate, 'COP')}</span>`);
+                }
             }
-            if (cryptoData.ethereum) {
-                items.push(`<span class="ticker-label">ETH/USD</span> <span class="ticker-value">${formatCurrency(cryptoData.ethereum.usd, 'USD')}</span> ${getChangeSpan(cryptoData.ethereum.usd_24h_change)}`);
-                items.push(`<span class="ticker-label">ETH/COP</span> <span class="ticker-value">${formatCurrency(cryptoData.ethereum.cop, 'COP')}</span>`);
+            if (ethData.lastPrice) {
+                const ethUsd = parseFloat(ethData.lastPrice);
+                items.push(`<span class="ticker-label">ETH/USD</span> <span class="ticker-value">${formatCurrency(ethUsd, 'USD')}</span> ${getChangeSpan(ethData.priceChangePercent)}`);
+                if (copRate > 0) {
+                    items.push(`<span class="ticker-label">ETH/COP</span> <span class="ticker-value">${formatCurrency(ethUsd * copRate, 'COP')}</span>`);
+                }
             }
 
             if (items.length > 0) {
